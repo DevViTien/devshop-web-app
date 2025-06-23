@@ -1,1 +1,54 @@
-{}
+{
+  "theme": {
+    "switchTheme": "切换主题",
+    "selectTheme": "选择主题",
+    "light": "浅色",
+    "dark": "深色",
+    "system": "系统"
+  },
+  "language": {
+    "selectLanguage": "选择语言"
+  },
+  "navigation": {
+    "home": "首页",
+    "templates": "模板",
+    "demo": "UI演示",
+    "about": "关于",
+    "contact": "联系我们"
+  },
+  "demo": {
+    "title": "DevShop UI组件演示",
+    "subtitle": "DevShop的UI组件库 - 源代码模板市场",
+    "typography": "排版",
+    "buttons": "按钮",
+    "inputs": "输入框",
+    "cards": "卡片",
+    "modal": "弹窗",
+    "headings": "标题",
+    "bodyText": "正文",
+    "variants": "变体",
+    "sizesStates": "尺寸和状态",
+    "inputVariants": "输入框变体",
+    "inputStates": "输入框状态",
+    "modalDemo": "弹窗演示",
+    "openModal": "打开弹窗演示",
+    "templatePreview": "模板预览",
+    "builtWith": "使用React、Next.js和Tailwind CSS构建"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "close": "关闭",
+    "open": "打开",
+    "buy": "购买",
+    "buyNow": "立即购买",
+    "download": "下载",
+    "preview": "预览",
+    "addToCart": "加入购物车"
+  }
+}

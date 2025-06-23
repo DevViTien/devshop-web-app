@@ -1,1 +1,54 @@
-{}
+{
+  "theme": {
+    "switchTheme": "Chuyển đổi giao diện",
+    "selectTheme": "Chọn giao diện",
+    "light": "Sáng",
+    "dark": "Tối",
+    "system": "Hệ thống"
+  },
+  "language": {
+    "selectLanguage": "Chọn ngôn ngữ"
+  },
+  "navigation": {
+    "home": "Trang chủ",
+    "templates": "Mẫu thiết kế",
+    "demo": "Demo UI",
+    "about": "Giới thiệu",
+    "contact": "Liên hệ"
+  },
+  "demo": {
+    "title": "Demo Components UI DevShop",
+    "subtitle": "Thư viện components UI cho DevShop - Marketplace Template Mã Nguồn",
+    "typography": "Kiểu chữ",
+    "buttons": "Nút bấm",
+    "inputs": "Ô nhập liệu",
+    "cards": "Thẻ",
+    "modal": "Hộp thoại",
+    "headings": "Tiêu đề",
+    "bodyText": "Văn bản",
+    "variants": "Biến thể",
+    "sizesStates": "Kích thước & Trạng thái",
+    "inputVariants": "Biến thể ô nhập",
+    "inputStates": "Trạng thái ô nhập",
+    "modalDemo": "Demo Modal",
+    "openModal": "Mở Modal Demo",
+    "templatePreview": "Xem trước Template",
+    "builtWith": "Xây dựng với React, Next.js & Tailwind CSS"
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "success": "Thành công",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "delete": "Xóa",
+    "edit": "Chỉnh sửa",
+    "close": "Đóng",
+    "open": "Mở",
+    "buy": "Mua",
+    "buyNow": "Mua ngay",
+    "download": "Tải xuống",
+    "preview": "Xem trước",
+    "addToCart": "Thêm vào giỏ"
+  }
+}

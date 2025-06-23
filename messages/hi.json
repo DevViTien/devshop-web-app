@@ -1,1 +1,54 @@
-{}
+{
+  "theme": {
+    "switchTheme": "थीम बदलें",
+    "selectTheme": "थीम चुनें",
+    "light": "हल्का",
+    "dark": "गहरा",
+    "system": "सिस्टम"
+  },
+  "language": {
+    "selectLanguage": "भाषा चुनें"
+  },
+  "navigation": {
+    "home": "होम",
+    "templates": "टेम्प्लेट",
+    "demo": "UI डेमो",
+    "about": "हमारे बारे में",
+    "contact": "संपर्क"
+  },
+  "demo": {
+    "title": "DevShop UI कॉम्पोनेंट डेमो",
+    "subtitle": "DevShop के लिए UI कॉम्पोनेंट लाइब्रेरी - सोर्स कोड टेम्प्लेट मार्केटप्लेस",
+    "typography": "टाइपोग्राफी",
+    "buttons": "बटन",
+    "inputs": "इनपुट",
+    "cards": "कार्ड",
+    "modal": "मॉडल",
+    "headings": "शीर्षक",
+    "bodyText": "मुख्य टेक्स्ट",
+    "variants": "वेरिएंट",
+    "sizesStates": "साइज़ और स्थिति",
+    "inputVariants": "इनपुट वेरिएंट",
+    "inputStates": "इनपुट स्थिति",
+    "modalDemo": "मॉडल डेमो",
+    "openModal": "मॉडल डेमो खोलें",
+    "templatePreview": "टेम्प्लेट प्रीव्यू",
+    "builtWith": "React, Next.js और Tailwind CSS के साथ बनाया गया"
+  },
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "success": "सफलता",
+    "cancel": "रद्द करें",
+    "save": "सेव करें",
+    "delete": "डिलीट करें",
+    "edit": "संपादित करें",
+    "close": "बंद करें",
+    "open": "खोलें",
+    "buy": "खरीदें",
+    "buyNow": "अभी खरीदें",
+    "download": "डाउनलोड",
+    "preview": "प्रीव्यू",
+    "addToCart": "कार्ट में जोड़ें"
+  }
+}

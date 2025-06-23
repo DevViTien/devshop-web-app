@@ -1,1 +1,54 @@
-{}
+{
+  "theme": {
+    "switchTheme": "Switch theme",
+    "selectTheme": "Select theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "language": {
+    "selectLanguage": "Select language"
+  },
+  "navigation": {
+    "home": "Home",
+    "templates": "Templates",
+    "demo": "UI Demo",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "demo": {
+    "title": "DevShop UI Components Demo",
+    "subtitle": "UI component library for DevShop - Source Code Template Marketplace",
+    "typography": "Typography",
+    "buttons": "Buttons",
+    "inputs": "Inputs",
+    "cards": "Cards",
+    "modal": "Modal",
+    "headings": "Headings",
+    "bodyText": "Body Text",
+    "variants": "Variants",
+    "sizesStates": "Sizes & States",
+    "inputVariants": "Input Variants",
+    "inputStates": "Input States",
+    "modalDemo": "Modal Demo",
+    "openModal": "Open Modal Demo",
+    "templatePreview": "Template Preview",
+    "builtWith": "Built with React, Next.js & Tailwind CSS"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "open": "Open",
+    "buy": "Buy",
+    "buyNow": "Buy Now",
+    "download": "Download",
+    "preview": "Preview",
+    "addToCart": "Add to Cart"
+  }
+}
