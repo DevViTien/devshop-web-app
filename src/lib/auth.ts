@@ -3,6 +3,9 @@ import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import { MongoClient } from "mongodb";
 import EmailProvider from "next-auth/providers/email";
 import CredentialsProvider from "next-auth/providers/credentials";
+import bcrypt from "bcryptjs";
+import dbConnect from "@/lib/db";
+import User from "@/models/User";
 
 // Kết nối MongoDB cho NextAuth adapter
 const client = new MongoClient(process.env.MONGODB_URI as string);
@@ -35,26 +38,56 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        // TODO: Implement user authentication logic
-        // Sẽ được triển khai ở bước sau khi có User model
-        if (credentials?.email && credentials?.password) {
-          // Placeholder user object
-          return {
-            id: "1",
-            email: credentials.email,
-            name: "User",
-          };
+        if (!credentials?.email || !credentials?.password) {
+          return null;
         }
-        return null;
+
+        try {
+          // Kết nối database
+          await dbConnect();
+
+          // Tìm user với email (include password để verify)
+          const user = await User.findOne({ email: credentials.email }).select(
+            "+password"
+          );
+
+          if (!user) {
+            return null;
+          }
+
+          // Kiểm tra password
+          const isPasswordValid = await bcrypt.compare(
+            credentials.password,
+            user.password || ""
+          );
+
+          if (!isPasswordValid) {
+            return null;
+          }
+
+          // Cập nhật lastLoginAt
+          await User.findByIdAndUpdate(user._id, { lastLoginAt: new Date() });
+
+          // Trả về user object
+          return {
+            id: user._id.toString(),
+            email: user.email,
+            name: user.name,
+            role: user.role,
+            image: user.image,
+          };
+        } catch (error) {
+          console.error("Authentication error:", error);
+          return null;
+        }
       },
     }),
   ],
 
   // Cấu hình session
   session: {
-    strategy: "database", // Sử dụng database sessions thay vì JWT
+    strategy: "jwt", // Sử dụng JWT cho tương thích tốt hơn với Next.js 15
     maxAge: 30 * 24 * 60 * 60, // 30 days
-    updateAge: 24 * 60 * 60, // 24 hours
   },
   // Cấu hình pages tùy chỉnh
   pages: {
@@ -64,20 +97,22 @@ export const authOptions: NextAuthOptions = {
   },
   // Callbacks để tùy chỉnh hành vi
   callbacks: {
-    async session({ session, user }) {
-      // Thêm user id vào session
-      if (session.user && user) {
-        session.user.id = user.id;
-      }
-      return session;
-    },
-
     async jwt({ token, user }) {
-      // Lưu user id trong JWT token nếu cần
+      // Thêm thông tin user vào JWT token
       if (user) {
         token.userId = user.id;
+        token.role = user.role || "buyer";
       }
       return token;
+    },
+
+    async session({ session, token }) {
+      // Thêm thông tin từ token vào session
+      if (token && session.user) {
+        session.user.id = token.userId as string;
+        session.user.role = token.role as string;
+      }
+      return session;
     },
   },
 

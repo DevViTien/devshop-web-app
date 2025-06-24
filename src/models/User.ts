@@ -5,6 +5,7 @@ export interface IUser extends Document {
   _id: mongoose.Types.ObjectId;
   name: string;
   email: string;
+  password?: string; // Optional cho social login
   emailVerified?: Date;
   image?: string;
   role: "buyer" | "seller" | "admin";
@@ -78,6 +79,16 @@ const UserSchema = new Schema<IUser>(
         /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
         "Email không hợp lệ",
       ],
+    },
+
+    password: {
+      type: String,
+      required: function (this: IUser) {
+        // Password required nếu không phải social login
+        return !this.image; // Nếu có image từ social login thì không cần password
+      },
+      minlength: [8, "Mật khẩu phải có ít nhất 8 ký tự"],
+      select: false, // Không trả về password khi query
     },
 
     emailVerified: {
