@@ -199,9 +199,9 @@ src/
 - [x] Triển khai hệ thống theme
 - [x] Kết nối MongoDB với Mongoose
 - [x] Cấu hình NextAuth.js với MongoDB adapter
-- [ ] Thiết kế Mongoose schemas (User, Template, Order, Review)
-- [ ] Thư viện components UI cơ bản
-- [ ] API Routes cơ bản (/api/auth, /api/users, /api/templates)
+- [x] Thiết kế Mongoose schemas (User, Template, Order, Review)
+- [x] Thư viện components UI cơ bản
+- [x] API Routes cơ bản (/api/auth, /api/users, /api/templates)
 
 ### Giai Đoạn 2: Tính Năng Cốt Lõi
 
